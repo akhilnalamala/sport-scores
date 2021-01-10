@@ -1,0 +1,96 @@
+<div class="wrapper">
+
+    <nav id="sidebar">
+
+        <div class="sidebar-header">
+            <h3>Pick a league!</h3>
+            <strong>SS</strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <%= link_to '<i class="fas fa-home"></i> Home'.html_safe, '/', :"data-turbolinks" => false %>
+            </li>
+            <li>
+                <%= link_to '<i class="fas fa-basketball-ball"></i> NBA'.html_safe, '/NBA', :"data-turbolinks" => false %>
+            </li>
+            <li>
+                <%= link_to '<i class="fas fa-football-ball"></i> NFL'.html_safe, '/NFL', :"data-turbolinks" => false%>
+            </li>
+            <li>
+                <%= link_to '<i class="fas fa-hockey-puck"></i> NHL'.html_safe, '/NHL', :"data-turbolinks" => false %>
+            </li>
+            <li class='active'>
+                <%= link_to '<i class="fas fa-baseball-ball"></i> MLB'.html_safe, '#', :"data-turbolinks" => false %>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg rounded">
+            <div class="container-fluid">
+
+                <div class="buttons">
+                    <div class="toggle-btn">
+                        <button type="button" id="sidebarCollapse" class="btn navbar-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+
+                    <div class="refresh-btn">
+                        <button type="button" id="refreshScores" class="btn navbar-btn">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <a class="navbar-brand">Sportscore</a>
+
+            </div>
+        </nav>
+
+        <div class="intro-message">
+            <div class="container-fluid">
+                <p>MLB games currently underway: <%= @mlb_scores['games'] %> </p>
+            </div>
+        </div>
+
+        <% if @mlb_scores['games'] != 0 %>
+            <% @mlb_scores['results'].each do |game| %>
+
+                <div class="scores">
+                    <div class="card mb-3">
+                    
+                        <div class="card-body">
+
+                            <div class="row text-center">
+
+                                <div class="col-5">
+                                    <h4>game['scoreboard']['score']['home']</h4>
+                                    <p>game['teams']['home']['team']</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <h4>&mdash;</h4>
+                                </div>
+
+                                <div class="col-5">
+                                    <h4>game['scoreboard']['score']['away']</h4>
+                                    <p>game['teams']['away']['team']</p>
+                                </div>
+
+                            </div>
+
+                        </div>   
+
+                    </div>
+                </div>
+        
+            <% end %>
+        <% end %>
+
+    </div>
+
+</div>

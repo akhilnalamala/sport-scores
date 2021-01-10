@@ -1,0 +1,74 @@
+<div class="wrapper">
+
+    <nav id="sidebar">
+
+        <div class="sidebar-header">
+            <h3>Pick a league!</h3>
+            <strong>SS</strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class='active'>
+                <%= link_to '<i class="fas fa-home"></i> Home'.html_safe, '#', :"data-turbolinks" => false %>
+            </li>
+            <li>
+                <%= link_to '<i class="fas fa-basketball-ball"></i> NBA'.html_safe, '/NBA', :"data-turbolinks" => false %>
+            </li>
+            <li>
+                <%= link_to '<i class="fas fa-football-ball"></i> NFL'.html_safe, '/NFL', :"data-turbolinks" => false%>
+            </li>
+            <li>
+                <%= link_to '<i class="fas fa-hockey-puck"></i> NHL'.html_safe, '/NHL', :"data-turbolinks" => false %>
+            </li>
+            <li>
+                <%= link_to '<i class="fas fa-baseball-ball"></i> MLB'.html_safe, '/MLB', :"data-turbolinks" => false %>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled extras">
+            <li>
+                <%= link_to '<i class="fab fa-github"></i>'.html_safe, '#', :"data-turbolinks" => false %>
+            </li>
+            <li>
+                <%= link_to '<i class="fab fa-linkedin"></i>'.html_safe, '#', :"data-turbolinks" => false %>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+
+                <div class="toggle-btn">
+                    <button type="button" id="sidebarCollapse" class="btn navbar-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <a class="navbar-brand">Sportscore</a>
+
+            </div>
+        </nav>
+
+        <div class="app-desc">
+
+            <div class="container-fluid">
+                <p><%= @text1 %></p>
+                <p><%= @text2 %></p>
+                <ul>
+                    <li><%= @d1 %></li>
+                    <li><%= @d2 %></li>
+                    <li><%= @d3 %></li>
+                    <li><%= @d4 %></li>
+                    <li><%= @d5 %></li>
+                </ul>
+                <p><%= @text3 %></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
