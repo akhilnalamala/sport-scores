@@ -33,8 +33,8 @@ class ScoresController < ApplicationController
     def score_api(url)
       response = Excon.get(url,
                            headers: {
-                            'X-RapidAPI-Host' => 'sportspage-feeds.p.rapidapi.com',
-                            'X-RapidAPI-Key' => 'b44915a475mshc61d4895d5f7e49p1838e3jsn937a971042d4'
+                            'X-RapidAPI-Host' => ENV['APIHost'],
+                            'X-RapidAPI-Key' => ENV['APIKEY']
                            })
 
       JSON.parse(response.body)
